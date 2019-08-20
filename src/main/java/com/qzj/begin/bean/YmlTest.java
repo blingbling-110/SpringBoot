@@ -1,21 +1,42 @@
 package com.qzj.begin.bean;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 /**
  * 配置文件注入：将配置文件中配置的每一个属性的值映射到这个组件中
- * @ConfigurationProperties： 告诉SpringBoot将本类中所有属性与配置文件的配置进行绑定
- * prefix = "ymltest"：告诉SpringBoot配置文件中要映射的前缀
- * @Component 将组件添加到容器中，才能映射配置文件
+ *
+ * @ConfigurationProperties 告诉SpringBoot将本类中所有属性与配置文件的配置进行绑定
+ *     默认从全局配置文件获取(application.yml或application.properties)
+ * prefix = "ymltest" 告诉SpringBoot配置文件中要映射的前缀
+ * @Component 将YmlTest组件添加到容器中，才能映射配置文件
+ * @Validated JSR303数据校验
+ * @PropertySource 加载指定的配置文件（只能用于properties文件）
  */
 @Component
 @ConfigurationProperties(prefix = "ymltest")
+@Validated
+@PropertySource(value = {"classpath:appTest.properties"})
 public class YmlTest {
+    /**
+     * <bean class="ymltest">
+     *     <property name="str_test1">
+     *         <value>
+     *              "字面量/${key}从环境变量、配置文件中获取值/#{SpEL}"
+     *         </value>
+     *     </property>
+     * </bean>
+     */
+//    @Value("${ymltest.str_test1}")
+    @NotEmpty
     private String str_test1;
     private String str_test2;
     private String str_test3;
