@@ -24,7 +24,7 @@ import java.util.Map;
 @Component
 @ConfigurationProperties(prefix = "ymltest")
 @Validated
-@PropertySource(value = {"classpath:appTest.properties"})
+//@PropertySource(value = {"classpath:appTest.properties"})
 public class YmlTest {
     /**
      * <bean class="ymltest">
