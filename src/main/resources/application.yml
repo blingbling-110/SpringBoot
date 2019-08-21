@@ -1,22 +1,33 @@
+spring:
+  profiles:
+    active:
+      - prod
 server:
-  port: 8090
-
+  port: 8085
 ymltest:
-  str_test1: q \n z \t j${ymltest.default:default}
-
+  str_test1: q \n z \t j${random.int[200,500]}${ymltest.default:default}
   str_test2: "q \n z \t j"
-
   str_test3: 'q \n z \t j'
-
   date: 2019/8/19
-
   device:
     id: Dev001
     name: 设备001
-
   user_map: {0: 超级管理员, 1: 管理员}
-
   brw_list:
     - Dev001
     - 2019-8-19 19:38:23
     - 0
+---
+spring:
+  profiles: dev
+server:
+  port: 8088
+ymltest:
+  str_test1: (开发环境)
+---
+spring:
+  profiles: prod
+server:
+  port: 80
+ymltest:
+  str_test1: (生产环境)
