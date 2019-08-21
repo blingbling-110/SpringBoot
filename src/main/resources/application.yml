@@ -15,6 +15,7 @@
 #  5.jar包内部的application.properties或application.yml(不带spring.profile)配置文件
 #  6.@Configuration注解类上的@PropertySource
 #  7.通过SpringApplication.setDefaultProperties指定的默认属性
+debug: false # 若开启 Spring Boot debug 可以查看条件评估报告进而知道自动配置了哪些组件
 spring:
   profiles:
     active:
