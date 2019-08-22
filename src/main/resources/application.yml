@@ -15,7 +15,6 @@
 #  5.jar包内部的application.properties或application.yml(不带spring.profile)配置文件
 #  6.@Configuration注解类上的@PropertySource
 #  7.通过SpringApplication.setDefaultProperties指定的默认属性
-debug: false # 若开启 Spring Boot debug 可以查看条件评估报告进而知道自动配置了哪些组件
 spring:
   profiles:
     active:
@@ -37,6 +36,26 @@ ymltest:
     - Dev001
     - 2019-8-19 19:38:23
     - 0
+debug: false # 若开启 Spring Boot debug 可以查看条件评估报告进而知道自动配置了哪些组件
+logging:
+  level: # 该Map用于指定包对应的日志级别
+    com.qzj.begin: trace
+  # 指定输出文件名（默认在当前项目下，可指定完整路径或以项目所在磁盘为根目录的相对路径）
+#  file: ./log/begin.log
+  # 指定输出文件路径（默认文件名为spring.log，可指定完整路径或以项目所在磁盘为根目录的相对路径）
+#  path: E:/SpringBoot/log
+  # 日志输出格式：
+      # %d表示日期时间，
+      # %thread表示线程名，
+      # %‐5level：级别从左显示5个字符宽度
+      # %logger{50} 表示logger名字最长50个字符，否则按照句点分割。
+      # %msg：日志消息，
+      # %n是换行符
+  pattern:
+    # 设置控制台输出的日志格式
+    console: "%d{yyyy‐MM‐dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} ‐ %msg%n"
+    # 设置文件输出的日志格式
+    file: "%d{yyyy‐MM‐dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} ‐ %msg%n"
 ---
 spring:
   profiles: dev
