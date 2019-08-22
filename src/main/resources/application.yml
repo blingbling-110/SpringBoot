@@ -39,7 +39,7 @@ ymltest:
 debug: false # 若开启 Spring Boot debug 可以查看条件评估报告进而知道自动配置了哪些组件
 logging:
   level: # 该Map用于指定包对应的日志级别
-    com.qzj.begin: trace
+    com.qzj.begin: debug
   # 指定输出文件名（默认在当前项目下，可指定完整路径或以项目所在磁盘为根目录的相对路径）
 #  file: ./log/begin.log
   # 指定输出文件路径（默认文件名为spring.log，可指定完整路径或以项目所在磁盘为根目录的相对路径）
@@ -53,7 +53,7 @@ logging:
       # %n是换行符
   pattern:
     # 设置控制台输出的日志格式
-    console: "%d{yyyy‐MM‐dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} ‐ %msg%n"
+    console: "[default] %d{yyyy‐MM‐dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} ‐ %msg%n"
     # 设置文件输出的日志格式
     file: "%d{yyyy‐MM‐dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} ‐ %msg%n"
 ---
@@ -67,6 +67,6 @@ ymltest:
 spring:
   profiles: prod
 server:
-  port: 80
+  port: 8095
 ymltest:
   str_test1: (生产环境)
