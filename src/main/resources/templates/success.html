@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间，获取语法提示-->
+<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学习Thymeleaf</title>
+</head>
+<body>
+<h1>成功！</h1>
+<hr/>
+<!--th:text会将div元素中的文本内容替换-->
+<div th:text="${hello}">原先的文本</div>
+<hr/>
+<div th:utext="${hello}"></div>
+<hr/>
+<!--th:each每次遍历都会生成当前标签-->
+<h4 th:text="${u}" th:each="u:${users}"></h4>
+<hr/>
+<h4>
+    <!--    变量表达式的行内写法-->
+    <span th:each="u:${users}"> [[${u}]]</span>
+</h4>
+</body>
+</html>

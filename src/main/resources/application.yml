@@ -22,8 +22,9 @@ spring:
   profiles:
     active:
       - dev
-  resources:
-    static-locations: classpath:/hello/
+#  resources:
+#    # 自定义静态资源路径
+#    static-locations: classpath:/hello/
 
 server:
   port: 8085
