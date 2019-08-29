@@ -15,14 +15,21 @@
 #  5.jar包内部的application.properties或application.yml(不带spring.profile)配置文件
 #  6.@Configuration注解类上的@PropertySource
 #  7.通过SpringApplication.setDefaultProperties指定的默认属性
+
+##################################
+
 spring:
   profiles:
     active:
       - dev
+  resources:
+    static-locations: classpath:/hello/
+
 server:
   port: 8085
-  servlet:
-    context-path: /begin # 配置项目的访问路径
+#  servlet:
+#    context-path: /begin # 配置项目的访问路径
+
 ymltest:
   str_test1: q \n z \t j${random.int[200,500]}${ymltest.default:default}
   str_test2: "q \n z \t j"
@@ -36,7 +43,9 @@ ymltest:
     - Dev001
     - 2019-8-19 19:38:23
     - 0
+
 debug: false # 若开启 Spring Boot debug 可以查看条件评估报告进而知道自动配置了哪些组件
+
 logging:
   level: # 该Map用于指定包对应的日志级别
     com.qzj.begin: debug
@@ -51,6 +60,7 @@ logging:
       # %logger{50} 表示logger名字最长50个字符，否则按照句点分割。
       # %msg：日志消息，
       # %n是换行符
+  # 以logback-spring.xml为准
   pattern:
     # 设置控制台输出的日志格式
     console: "[default] %d{yyyy‐MM‐dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} ‐ %msg%n"
@@ -59,14 +69,18 @@ logging:
 ---
 spring:
   profiles: dev
+
 server:
   port: 8088
+
 ymltest:
   str_test1: (开发环境)
 ---
 spring:
   profiles: prod
+
 server:
   port: 8095
+
 ymltest:
   str_test1: (生产环境)
