@@ -22,6 +22,7 @@ public class BeginApplication {
 		SpringApplication.run(BeginApplication.class, args);
 	}
 
+	//添加自定义视图解析器
 	@Bean
 	public ViewResolver myViewResolver() {
 		return new MyViewResolver();

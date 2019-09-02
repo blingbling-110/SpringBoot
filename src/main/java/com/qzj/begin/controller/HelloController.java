@@ -21,8 +21,7 @@ public class HelloController {
 
     /**
      * @ResponseBody 表示用返回值响应浏览器
-     * @RequestMapping("/hello")表示响应浏览器的"/hello"请求
-     * @return 要响应的返回值
+     * @RequestMapping("/hello") 表示响应浏览器的"/hello"请求
      */
     @ResponseBody
     @RequestMapping("/hello")
@@ -34,6 +33,7 @@ public class HelloController {
     public String success(Map<String, Object> map) {
         map.put("hello", "<h1>你好<h1>");
         map.put("users", Arrays.asList("超级管理员", "管理员", "用户"));
+        //thymeleaf会根据返回值来渲染"classpath:/templates/"路径下的"<返回值>.html"资源
         return "success";
     }
 }
