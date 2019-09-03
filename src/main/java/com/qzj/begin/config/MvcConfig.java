@@ -10,9 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@EnableWebMvc
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
+    //addViewControllers实现一个请求直接映射成视图，不需要控制器
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        //"/qzj"请求映射到"success"
         registry.addViewController("/qzj").setViewName("success");
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/index.html").setViewName("index");

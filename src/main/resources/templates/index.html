@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<title>Signin Template for Bootstrap</title>
-		<!-- Bootstrap core CSS -->
-		<link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}" rel="stylesheet">
-		<!-- Custom styles for this template -->
-		<link th:href="@{/asserts/css/signin.css}" rel="stylesheet">
-	</head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--		viewport属性值用于移动端显示优化-->
+    <!--		https://www.runoob.com/w3cnote/viewport-deep-understanding.html-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="此主页用于学习SpringBoot Web开发，采用Thymeleaf引擎、Bootstrap框架">
+    <meta name="author" content="覃子俊">
+    <title>Bootstrap登录模板</title>
+    <!--	<link> 标签定义文档与外部资源的关系。-->
+    <!--	<link> 标签最常见的用途是链接样式表。-->
+    <!--	rel="stylesheet"指定文档的外部样式表-->
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/asserts/css/signin.css}" rel="stylesheet">
+</head>
 
-	<body class="text-center">
-		<form class="form-signin" action="dashboard.html">
-			<img class="mb-4" th:src="@{asserts/img/bootstrap-solid.svg}" alt="" width="72" height="72">
-			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-			<label class="sr-only">Username</label>
-			<input type="text" class="form-control" placeholder="Username" required="" autofocus="">
-			<label class="sr-only">Password</label>
-			<input type="password" class="form-control" placeholder="Password" required="">
-			<div class="checkbox mb-3">
-				<label>
-          <input type="checkbox" value="remember-me"> Remember me
+<!--class 全局属性定义了元素的类名-->
+<body class="text-center">
+<form class="form-signin" action="dashboard.html">
+    <img class="mb-4" th:src="@{favicon.ico}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Bootstrap登录模板<br><br>请登录</h1>
+    <label class="sr-only">Username</label>
+    <input type="text" class="form-control" placeholder="用户名" required="" autofocus="">
+    <label class="sr-only">Password</label>
+    <input type="password" class="form-control" placeholder="密码" required="">
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> 记住我
         </label>
-			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-			<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
-			<a class="btn btn-sm">中文</a>
-			<a class="btn btn-sm">English</a>
-		</form>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    <a class="btn btn-sm">中文</a>
+    <a class="btn btn-sm">English</a>
+</form>
 
-	</body>
+</body>
 
 </html>
