@@ -22,9 +22,11 @@ spring:
   profiles:
     active:
       - dev
-#  resources:
-#    # 自定义静态资源路径
-#    static-locations: classpath:/hello/
+  #  resources:
+  #    # 自定义静态资源路径
+  #    static-locations: classpath:/hello/
+  messages:
+    basename: i18n.login # 配置国际化资源文件的基本名称（配置文件的路径、基本名称）
 
 server:
   port: 8085
@@ -50,17 +52,17 @@ debug: false # 若开启 Spring Boot debug 可以查看条件评估报告进而�
 logging:
   level: # 该Map用于指定包对应的日志级别
     com.qzj.begin: debug
-  # 指定输出文件名（默认在当前项目下，可指定完整路径或以项目所在磁盘为根目录的相对路径）
-#  file: ./log/begin.log
-  # 指定输出文件路径（默认文件名为spring.log，可指定完整路径或以项目所在磁盘为根目录的相对路径）
-#  path: E:/SpringBoot/log
-  # 日志输出格式：
-      # %d表示日期时间，
-      # %thread表示线程名，
-      # %‐5level：级别从左显示5个字符宽度
-      # %logger{50} 表示logger名字最长50个字符，否则按照句点分割。
-      # %msg：日志消息，
-      # %n是换行符
+      # 指定输出文件名（默认在当前项目下，可指定完整路径或以项目所在磁盘为根目录的相对路径）
+      #  file: ./log/begin.log
+      # 指定输出文件路径（默认文件名为spring.log，可指定完整路径或以项目所在磁盘为根目录的相对路径）
+      #  path: E:/SpringBoot/log
+      # 日志输出格式：
+    # %d表示日期时间，
+    # %thread表示线程名，
+    # %‐5level：级别从左显示5个字符宽度
+    # %logger{50} 表示logger名字最长50个字符，否则按照句点分割。
+    # %msg：日志消息，
+    # %n是换行符
   # 以logback-spring.xml为准
   pattern:
     # 设置控制台输出的日志格式

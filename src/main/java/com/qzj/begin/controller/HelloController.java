@@ -17,7 +17,7 @@ public class HelloController {
      * @Value 获取配置文件中的值
      */
     @Value("${ymltest.str_test1}")
-    private String who;
+    private String profile;
 
     /**
      * @ResponseBody 表示用返回值响应浏览器
@@ -26,7 +26,7 @@ public class HelloController {
     @ResponseBody
     @RequestMapping("/hello")
     public String hello() {
-        return "Hello, Spring Boot!" + who;
+        return "Hello, Spring Boot!" + profile;
     }
 
     @RequestMapping("/success")
