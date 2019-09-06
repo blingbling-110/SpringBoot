@@ -18,19 +18,21 @@
 
 <!--class 全局属性定义了元素的类名-->
 <body class="text-center">
-<form class="form-signin" action="dashboard.html">
+<!--action表示表单数据要发送的去处，method指定表单数据发送的方式（get/post）-->
+<form class="form-signin" th:action="@{/user/login}" method="post">
     <!--    alt属性规定图像的替代文本。-->
-    <img class="mb-4" th:src="@{favicon.ico}" alt="" width="72" height="72">
+    <img class="mb-4" th:src="@{/favicon.ico}" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.title}"></h1>
     <br>
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.info}"></h1>
+    <!--    <label> 标签为 input 元素定义标注（标记）-->
     <label class="sr-only" th:text="#{login.username}"></label>
     <!--    placeholder 属性规定可描述输入 <input> 字段预期值的简短的提示信息-->
     <!--    required属性规定必需在提交表单之前填写输入字段-->
     <!--    autofocus属性规定当页面加载时 <input> 元素应该自动获得焦点-->
-    <input type="text" class="form-control" th:placeholder="#{login.username}" required="" autofocus="">
+    <input type="text" name="username" class="form-control" th:placeholder="#{login.username}" required="" autofocus="">
     <label class="sr-only" th:text="#{login.password}"></label>
-    <input type="password" class="form-control" th:placeholder="#{login.password}" required="">
+    <input type="password" name="password" class="form-control" th:placeholder="#{login.password}" required="">
     <!--    <div> 标签定义 HTML 文档中的一个分隔区块或者一个区域部分-->
     <div class="checkbox mb-3">
         <label>

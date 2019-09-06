@@ -27,6 +27,8 @@ spring:
   #    static-locations: classpath:/hello/
   messages:
     basename: i18n.login # 配置国际化资源文件的基本名称（配置文件的路径、基本名称）
+  thymeleaf:
+    cache: false # 禁用thymeleaf缓存
 
 server:
   port: 8085
