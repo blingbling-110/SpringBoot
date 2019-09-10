@@ -3,13 +3,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--		viewport属性值用于移动端显示优化-->
-    <!--		https://www.runoob.com/w3cnote/viewport-deep-understanding.html-->
+    <!--		https://www.runoob.com/w3cnote/viewport-deep-understanding.html -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="此主页用于学习SpringBoot Web开发，采用Thymeleaf引擎、Bootstrap框架">
     <meta name="author" content="覃子俊">
     <title th:text="#{login.title}"></title>
     <!--	<link> 标签定义文档与外部资源的关系，最常见的用途是链接样式表。-->
     <!--	rel="stylesheet"指定文档的外部样式表-->
+    <!--    以外部样式表的方式使用CSS-->
     <!-- Bootstrap core CSS -->
     <link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -25,11 +26,14 @@
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.title}"></h1>
     <br>
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.info}"></h1>
-    <!--    <label> 标签为 input 元素定义标注（标记）-->
+    <!--    以内联样式的方式使用CSS-->
+    <p style="color: red;" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <!--    <label> 标签为 input 元素定义标签-->
     <label class="sr-only" th:text="#{login.username}"></label>
     <!--    placeholder 属性规定可描述输入 <input> 字段预期值的简短的提示信息-->
     <!--    required属性规定必需在提交表单之前填写输入字段-->
     <!--    autofocus属性规定当页面加载时 <input> 元素应该自动获得焦点-->
+    <!--    name属性定义input元素的变量名称-->
     <input type="text" name="username" class="form-control" th:placeholder="#{login.username}" required="" autofocus="">
     <label class="sr-only" th:text="#{login.password}"></label>
     <input type="password" name="password" class="form-control" th:placeholder="#{login.password}" required="">

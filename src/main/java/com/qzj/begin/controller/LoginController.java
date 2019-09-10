@@ -18,7 +18,8 @@ public class LoginController {
                         @RequestParam("password") String pwd,
                         Map<String, Object> map) {
         if (!StringUtils.isEmpty(usr) && "123456".equals(pwd))
-            return "dashboard";
+//            return "dashboard";
+            return "redirect:/main.html";//重定向，防止表单重复提交
         else {
             map.put("msg", "用户名密码错误");
             return "index";
