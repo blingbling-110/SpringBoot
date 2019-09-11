@@ -1,10 +1,12 @@
 package com.qzj.begin.config;
 
+import com.qzj.begin.bean.LoginHandlerInterceptor;
 import com.qzj.begin.bean.MyLocaleResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -19,6 +21,14 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/index.html").setViewName("index");
         registry.addViewController("/main.html").setViewName("dashboard");
+    }
+
+    //注册拦截器
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        //"/*"匹配一级文件夹 "/**"匹配多级文件夹
+        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+                .excludePathPatterns("/", "/index.html", "/user/login");
     }
 
     /**

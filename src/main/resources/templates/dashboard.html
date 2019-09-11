@@ -45,8 +45,8 @@
 <body>
 <!--	<nav> 标签定义导航链接的部分-->
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">Company
-        name</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+        [[${session.loginUser}]]</a>
     <!--	aria-label属性指定所在匿名元素的标签，以便辅助技术访问-->
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <!--	<ul> 标签定义无序列表-->
@@ -248,6 +248,7 @@
                 </div>
             </div>
 
+            <!-- <canvas> 标签通过脚本（通常是 JavaScript）来绘制图形（比如图表和其他图像）-->
             <canvas class="my-4 chartjs-render-monitor" id="myChart" width="1076" height="454"
                     style="display: block; width: 1076px; height: 454px;"></canvas>
 
