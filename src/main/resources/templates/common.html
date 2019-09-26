@@ -25,7 +25,7 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" th:href="@{/main.html}">
+                <a th:class="${activeUri=='dashboard'?'nav-link active':'nav-link'}" th:href="@{/main.html}">
                     <!--SVG 意为可缩放矢量图形（Scalable Vector Graphics）。-->
                     <!--SVG 使用 XML 格式定义图像。-->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -61,7 +61,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/emps}">
+                <a th:class="${activeUri=='emps'?'nav-link active':'nav-link'}" th:href="@{/emps}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                          stroke-linejoin="round" class="feather feather-users">
