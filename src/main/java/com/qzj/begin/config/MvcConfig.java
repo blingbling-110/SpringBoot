@@ -28,7 +28,7 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         //"/*"匹配一级文件夹 "/**"匹配多级文件夹
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/", "/index.html", "/user/login", "/**/*.css");
+                .excludePathPatterns("/", "/index.html", "/user/login", "/resources/**", "/static/**");
     }
 
     /**
